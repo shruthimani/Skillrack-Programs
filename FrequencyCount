@@ -1,0 +1,58 @@
+COUNTING THE FREQUENCY OF ELEMENTS AND PRINTING THE ELEMENTS IN DESCENDING ORDER BASED ON FREQUENCY COUNT:
+ 
+I/P:n,array
+O/P:array sorted based on frequency(descending)
+ 
+Eg:
+i/p:
+1 2 1 3 4 2 5 3 4 1 1
+o/p:
+1 2 3 4 5(1->4,2->2,3->2,4->4,5->1)[if elements with equal frequency print it with the least element].
+ 
+import java.util.*;
+public class Hello {
+ 
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		ArrayList<Integer> arr=new ArrayList<>();
+		int i=0;
+	    
+		for(i=0;i<n;i++)
+		arr.add(s.nextInt());
+	    
+		ArrayList<Integer> freq=new ArrayList<>();
+		for(i=0;i<n;i++)
+		freq.add(Collections.frequency(arr,arr.get(i)));
+	    
+	    
+		Map<Integer,Integer> map=new TreeMap<Integer,Integer>();
+		for(i=0;i<n;i++)
+		{
+	    	map.put(arr.get(i),freq.get(i));
+		}
+	   /* //System.out.println(map);
+		//int maximum=Collections.max(freq);
+		//System.out.println(maximum);
+		for(Map.Entry<Integer,Integer> e:map.entrySet())
+		{
+	   	// if(maximum==(Integer.valueOf(e.getValue())))
+	    	//{
+	        	System.out.println(e.getKey()+" "+e.getValue());
+	      	//  break;
+	   	// }
+		}*/
+	    
+		List<Map.Entry<Integer,Integer>> list=new LinkedList<Map.Entry<Integer,Integer>>(map.entrySet());
+		Collections.sort(list,new Comparator<Map.Entry<Integer,Integer>>()
+		{
+	    	public int compare(Map.Entry<Integer,Integer> o1,Map.Entry<Integer,Integer> o2)
+	    	{
+	        	return o2.getValue().compareTo(o1.getValue());
+	    	}
+	    	}
+	    	);
+	    	for(Map.Entry<Integer,Integer> mp:list)
+	    	System.out.print(mp.getKey()+" ");
+	}
+}
