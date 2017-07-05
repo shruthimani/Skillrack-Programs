@@ -1,0 +1,41 @@
+
+ 
+The program must accept a number N and print the numbers from 1 to N in both forward and reverse direction interlaced with each other.
+Input Format:
+The first line contains N.
+Output Format:
+The first line contains the values from 1 to N in both forward and reverse direction interlaced with each other.
+Boundary Conditions:
+1 <= N <= 500
+Example Input/Output 1:
+Input:
+9
+Output:
+1 9 2 8 3 7 4 6 5 5 6 4 7 3 8 2 9 1
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+import java.util.*;
+public class Hello {
+ 
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        ArrayList<Integer> arr=new ArrayList<>();
+        ArrayList<Integer> rev=new ArrayList<>();
+        
+        
+        for(int i=1;i<=n;i++){
+        arr.add(i);
+    
+        
+        }
+        rev.addAll(arr);
+        Collections.sort(rev,Collections.reverseOrder());
+        
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr.get(i)+" "+rev.get(i)+" ");
+        }
+ 
+    }
+}
