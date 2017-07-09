@@ -1,0 +1,56 @@
+An array of N numbers is passed as the input. The program must sort the odd numbers and even numbers separately in ascending order. The odd and even numbers must retain their original odd even slots in the input.
+Input Format:
+The first line contains N indicating the count of numbers in the array.
+The second line contains the N array elements separated by a space.
+Output Format:
+The first line contains the N sorted array elements separated by a space.
+Boundary Conditions:
+2 <= N <= 100
+Example Input/Output 1:
+Input:
+9
+169 181 298 16 147 263 102 155 141
+Output:
+141 147 16 102 155 169 298 181 263
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int length=s.nextInt();
+		ArrayList<Integer> arrOdd=new ArrayList<>();
+		ArrayList<Integer> arrEven=new ArrayList<>();
+		ArrayList<Integer> arr=new ArrayList<>();
+		
+		for(int i=0;i<length;i++)
+		{
+		    arr.add(s.nextInt());
+		    
+		    if(arr.get(i)%2==0)
+		    arrEven.add(arr.get(i));
+		    
+		    else
+		    arrOdd.add(arr.get(i));
+		    
+		}
+Collections.sort(arrEven);
+Collections.sort(arrOdd);
+int j=0,k=0;
+for(int i=0;i<length;i++)
+{
+    if(arr.get(i)%2==0){
+    System.out.print(arrEven.get(j)+" ");
+    j++;
+    }
+    
+    else
+    {
+        System.out.print(arrOdd.get(k)+" ");
+        k++;
+    }
+}
+	}
+}
