@@ -1,0 +1,46 @@
+
+
+N number of people attend a party and when entering the premise where the party is held each of them is assigned a visitor pass which has a number in it. Certain games are conducted in the party and for that the N people must be divided into two groups called Green and Blue. The people having odd number in their visitor pass will be assigned to Green group and those having even numbers will be assigned to Blue group.
+
+The program must accept the N numbers present in the visitors pass and print the number of people belonging to Green group and Blue group.
+
+Input Format:
+The first line contains the value of N.
+The second line contains the value of the numbers present in the visitors pass V(1), ... ,V(N).
+
+Output Format:
+The first line contains the number of people belonging to Green group and Blue group, with the values separated by a space.
+
+Boundary Conditions:
+1 <= N <= 1000
+1 <= V(i) <= 10000
+
+Example Input/Output 1:
+Input:
+5
+101 33 400 220 51
+
+Output:
+3 2
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int number=s.nextInt();
+		int green=0,blue=0,value=0;
+		
+		for(int i=0;i<number;i++)
+		{
+		    value=s.nextInt();
+		    
+		    if(value%2 == 0)
+		    blue++;
+		    
+		    else
+		    green++;
+		    
+		}
+System.out.println(green+" "+blue);
+	}
+}
