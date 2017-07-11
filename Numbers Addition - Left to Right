@@ -1,0 +1,53 @@
+
+Given two numbers N1 and N2, find the sum by adding them from left to right.
+Input Format:
+The first line contains N1.The second line contains N2.
+Output Format:
+The first line contains the sum of N1 and N2 added from left to right.
+Boundary Conditions:
+100 <= N1 <= 999999
+100 <= N2 <= 999999
+Example Input/Output 1:
+Input:
+6321
+5235
+Output:
+1656
+Example Input/Output 2:
+Input:
+16282
+5964
+Output:
+11257
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		StringBuilder str1=new StringBuilder(s.next());
+		StringBuilder str2=new StringBuilder(s.next());
+		str1.reverse();
+		str2.reverse();
+		//System.out.println(str2.length());
+		while(str1.length()!=str2.length()){
+		if(str1.length()<=str2.length())
+		str1.append(0);
+		
+		else if(str2.length()<=str2.length())
+		str2.append(0);
+		
+		else if(str1.length() == str2.length())
+		break;
+		}
+		int val1=Integer.parseInt(str1.toString());
+		int val2=Integer.parseInt(str2.toString());
+		
+		int total=val1+val2;
+		str1.delete(0,str1.length());
+		
+		str1.append(String.valueOf(total));
+		System.out.println(str1.reverse());
+
+	}
+}
