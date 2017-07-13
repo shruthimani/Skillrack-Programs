@@ -1,0 +1,47 @@
+
+
+Certain number of people play a card game. They play N rounds. The names of the winner in each round is passed as the input to the program.
+The program must print the unique count of the winners.
+
+Input Format:
+The first line contains the values of N.
+N lines contain the names of the winners.
+
+Output Format:
+The first line contains the unique count of winners.
+
+Boundary Conditions:
+1 <= N <= 100
+Length of  name is from 3 to 100
+
+Example Input/Output 1:
+Input:
+6
+Arun
+Bhamini
+Arun
+Derek
+Sahul
+Bhamini
+
+Output:
+4
+ 
+
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		Set<String> str=new TreeSet<>();
+		int num=s.nextInt();
+		
+		for(int i=0;i<num;i++)
+		str.add(s.next());
+		
+		System.out.print(str.size());
+
+	}
+}
+
