@@ -1,0 +1,54 @@
+Given N students name and department, print the X students belonging to a specific department D.
+
+Input Format:
+The first line contains the values of N.
+N lines contain the name and department of N students separated by a space.
+The next line (N+2)th line, will contain the department name D for which the students list is to be printed.
+
+Output Format:
+X lines containing students name where X is the number of students belonging to department D.
+
+Boundary Conditions:
+1 <= N <= 100
+Length of student name is from 3 to 100
+Length of department name is from 3 to 20
+
+Example Input/Output 1:
+Input:
+5
+Arun EEE
+Bhuvana ECE
+Ganesh MECH
+Pavithra ECE
+Rohit CSE
+ECE
+
+Output:
+Bhuvana
+Pavithra
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		Map<String,String> map=new LinkedHashMap<>();
+		s.nextLine();
+		
+		for(int i=0;i<n;i++)
+		{
+		    String str=s.nextLine();
+		    String[] words=str.split("\\s");
+		    map.put(words[0],words[1]);
+		}
+		String val=s.next();
+		for(Map.Entry<String,String> mp:map.entrySet())
+		{
+		    if(mp.getValue().equals(val))
+		    System.out.println(mp.getKey());
+		}
+
+	}
+}
