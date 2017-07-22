@@ -1,0 +1,39 @@
+
+Given two positive integers A and B and a digit U, the program must print all the integers from A to B (inclusive of A and B), which have their unit digit as U.
+Input Format:
+The first line contains A
+The second line contains B
+The third line contains U
+Output Format:
+The first line contains the integers from A to B having their unit digit as U in ascending order with each integer separated by a space.
+Boundary Conditions:
+1 <= A,B <= 99999
+0 <= U <= 9
+Example Input/Output 1:
+Input:
+20
+210
+3
+Output:
+23 33 43 53 63 73 83 93 103 113 123 133 143 153 163 173 183 193 203
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int num1=s.nextInt();
+		int num2=s.nextInt();
+		
+		int unitVal=s.nextInt();
+		
+		for(int i=num1;i<=num2;i++)
+		{
+		    if(i%10 == unitVal)
+		    System.out.print(i+" ");
+		}
+
+	}
+}
+
