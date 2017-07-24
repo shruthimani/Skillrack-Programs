@@ -1,0 +1,116 @@
+
+
+Given an odd value of N, the program must print a rhombus in diamond shape whose side contains N slashes as shown below in the examples.
+
+Input Format:
+The first line contains N.
+
+Output Format:
+The rhombus in diamond shape with each side containing N slashes. Asterisk is used as a filler for other values.
+
+Boundary Conditions:
+1 <= N <= 101 and N is odd.
+
+Example Input/Output 1:
+Input:
+5
+
+Output:
+****/\****
+***/**\***
+**/****\**
+*/******\*
+/********\
+\********/
+*\******/*
+**\****/**
+***\**/***
+****\/****
+
+Example Input/Output 2:
+Input:
+11
+
+Output:
+**********/\**********
+*********/**\*********
+********/****\********
+*******/******\*******
+******/********\******
+*****/**********\*****
+****/************\****
+***/**************\***
+**/****************\**
+*/******************\*
+/********************\
+\********************/
+*\******************/*
+**\****************/**
+***\**************/***
+****\************/****
+*****\**********/*****
+******\********/******
+*******\******/*******
+********\****/********
+*********\**/*********
+**********\/**********
+
+
+
+
+
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		int prev=n-1;
+		int next=n;
+		
+		for(int i=0;i<n;i++)
+		{
+		    
+		    for(int j=0;j<(2*n);j++)
+		    {
+		        if(j==prev)
+		        System.out.print("/");
+		        
+		        else if(j==next)
+		        System.out.print("\\");
+		        
+		        else 
+		        System.out.print("*");
+		        
+		    }
+		    System.out.println();
+		    
+		    prev--;
+		    next++;
+		}
+		
+		prev++;
+		next--;
+		for(int i=0;i<n;i++)
+		{
+		    for(int j=0;j<(2*n);j++)
+		    {
+		        if(j==prev)
+		        System.out.print("\\");
+		        
+		        else if(j==next)
+		        System.out.print("/");
+		        
+		        else
+		        System.out.print("*");
+		    }
+		    System.out.println();
+		    prev++;
+		    next--;
+		}
+		    
+	
+
+	}
+}
