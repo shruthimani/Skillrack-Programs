@@ -1,0 +1,84 @@
+
+
+A Square Matrix of N Rows and N Columns is passed as the input and also a String S of Length L is passed as input. The matrix has an empty slot of length L denoted by + and remaining cells are denoted by #, with a space separating them.
+Example of a slot of length 3 in the first row starting from column 2 and ending at column 4:
+# + + + #
+# # # # #
+# # # # #
+# # # # #
+# # # # # 
+Input Format:
+First line contains N.
+Next N lines contain the matrix cell values as described above.
+The final line contains S
+Output Format:
+Matrix is printed with the empty cell slots denoted by + filled with the characters in string S.
+Boundary Conditions:
+1 <= N <= 100
+1 <= Length of S <= 100
+
+Example Input/Output 1:
+Input:
+5
+# # + # #
+# # + # #
+# # + # #
+# # + # #
+# # + # #
+India
+Output:
+# # I # #
+# # n # #
+# # d # #
+# # i # #
+# # a # #
+Example Input/Output 2:
+Input:
+3
+# + +
+# # #
+# # #
+Hi
+Output:
+# H i 
+# # # 
+# # #
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		char[][] ch=new char[n][n];
+		
+		for(int i=0;i<n;i++)
+		{
+		    for(int j=0;j<n;j++)
+		    {
+		        ch[i][j]=s.next().charAt(0);
+		    }
+		}
+		String str=s.next();
+		int k=0;
+		
+		for(int i=0;i<n;i++)
+		{
+		    for(int j=0;j<n;j++)
+		    {
+		        if(ch[i][j] == '+')
+		        {
+		            System.out.print(str.charAt(k)+" ");
+		            k++;
+		        }
+		        
+		        else
+		        System.out.print(ch[i][j]+" ");
+		    }
+		    System.out.println();
+		}
+		
+
+	}
+}
