@@ -1,0 +1,57 @@
+
+
+Every day in a restaurant two numbers X and Y are considered lucky numbers.
+If the bill amount B is divisible by X, then X% discount is offered.
+If the bill amount B is divisible by Y, then Y% discount is offered.
+If the bill amount B is divisible by both X and Y, then no amount is to be paid.
+The program must accept X, Y and B and print the amount to be paid as the output (precision is upto 3 decimal places)
+Input Format:
+The first line contains B
+The second line contains X
+The third line contains Y
+Output Format:
+The first line contains the amount to be paid finally after discount.
+Boundary Conditions:
+1 <= X,Y <= 50
+20 <= B <= 100000
+Example Input/Output 1:
+Input:
+500
+20
+50
+Output:
+0.000
+Example Input/Output 2:
+Input:
+100
+9
+10
+Output:
+90.000
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+      Scanner s=new Scanner(System.in);
+      int bill=s.nextInt();
+      int x=s.nextInt();
+      int y=s.nextInt();
+     double total=0;
+      
+      if(bill%x==0 && bill%y==0)
+      total=0;
+      
+      else if(bill%x==0)
+      total=bill-((bill*x)/100);
+      
+      else if(bill%y==0)
+      total=bill-((bill*y)/100);
+      
+      else
+      total=bill;
+      
+      System.out.printf("%.3f",total);
+
+	}
+}
