@@ -1,0 +1,67 @@
+
+
+Arun, Balaji, and Chandra are playing a card game. The points collected at the end of the game is given as input. The program must print the winner of the game (who has scored the maximum points). If all the three players have the same score, print TIE. If any two players have the same score print their names in Alphabetical order.
+Input Format:
+The first line contains the points separated by space.
+Output Format:
+The first line contains TIE if all the points are equal, or the winner's name in alphabetical order if any two points are equal, or the winners name if none of the points are equal.
+Boundary Conditions:
+10 <= A,B,C <= 1000
+Example Input/Output 1:
+Input:
+10 20 30
+Output:
+Chandra
+
+Example Input/Output 2:
+Input:
+10 10 5
+Output:
+Arun Balaji
+Example Input/Output 3:
+Input:
+30 30 30
+Output:
+TIE
+
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int a=s.nextInt();
+		int b=s.nextInt();
+		int c=s.nextInt();
+		
+		
+		if(a==b && a==c)
+		System.out.println("TIE");
+		
+		else
+		{
+		    if(a>b && a>c)
+		    System.out.println("Arun");
+		    
+		    else if(b>a && b>c)
+		    System.out.println("Balaji");
+		    
+		    else if(c>b && c>a)
+		    System.out.println("Chandra");
+		    
+		    else if(a==b)
+		    System.out.println("Arun Balaji");
+		    
+		    else if(a==c)
+		    System.out.println("Arun Chandra");
+		    
+		    else if(b==c)
+		    System.out.println("Balaji Chandra");
+		    
+		
+
+}
+	}
+}
+---------------------------------------------------------------------------------
+
