@@ -1,0 +1,49 @@
+
+
+The program must accept two numbers X and Y and then print their HCF/GCD.
+Input Format:
+The first line denotes the value of X.
+The second line denotes the value of Y.
+Output Format:
+The first line contains the HCF of X and Y.
+Boundary Conditions:
+1 <= X <= 999999
+1 <= Y <= 999999
+
+Example Input/Output 1:
+Input:
+30
+40
+Output:
+10
+Example Input/Output 2:
+Input:
+15
+10
+Output:
+5
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int val1=s.nextInt();
+		int val2=s.nextInt();
+		int min=0;
+		ArrayList<Integer> arr=new ArrayList<>();
+		if(val1<val2)
+		min=val1;
+		
+		else min=val2;
+		int gcd=1;
+		
+		for(int i=1;i<=min;i++)
+		{
+		    if(val1%i == 0 && val2%i == 0)
+		    arr.add(i);
+		}
+System.out.println(Collections.max(arr));
+	}
+}
+---------------------------------------------------------------------------------
+
