@@ -1,0 +1,42 @@
+
+A square matrix of size N×N is passed as the input. The program must calculate and print the sum of the elements in the corners.
+Input Format:
+The first line will contain the value of N.
+The next N lines will contain the N values separated by one or more spaces.
+Output Format:
+The first line will contain the integer value denoting the sum of the elements in the corners.
+Boundary Conditions:
+2 <= N <= 20
+Example Input/Output 1:
+Input:
+3
+10 90 1
+4  22 5
+32 8 66
+Output:
+109
+Explanation:
+The sum = 10+1+66+32 =  109
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		int[][] arr=new int[n][n];
+		int sum=0;
+		for(int i=0;i<n;i++){
+		  for(int j=0;j<n;j++){
+		    arr[i][j]=s.nextInt();
+		    if((i==0 && j==0) || (j==n-1 &&i==n-1))
+              sum+=arr[i][j];
+		        
+		     if((j==0 && i==n-1) || (j==n-1 && i==0))
+		        sum+=arr[i][j];
+		        
+		    }
+		}    
+		   System.out.println(sum); 
+      
+	}
+}
