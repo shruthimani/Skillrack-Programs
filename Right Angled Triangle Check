@@ -1,0 +1,54 @@
+
+
+The length of the three sides of a triangle A, B and C are passed as the input. The program must check it it's a right angled triangle. Print YES or NO based on the check.
+Input Format:
+The first line contains A.
+The second line contains B.
+The third line contains C.
+Output Format:
+The first line contains YES or NO
+Boundary Conditions:
+1 <= A, B, C <= 9999
+Example Input/Output 1:
+Input:
+5
+3
+4
+Output:
+YES
+Example Input/Output 2:
+Input:
+11
+6
+9
+Output:
+NO
+
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int a=s.nextInt();
+		int b=s.nextInt();
+		int c=s.nextInt();
+		
+		int aSquare=a*a;
+		int bSquare=b*b;
+		int cSquare=c*c;
+		
+		if(aSquare==bSquare+cSquare && a>b && a>c)
+		System.out.println("YES");
+		
+		else if(bSquare==aSquare+cSquare && b>a && c>a)
+		System.out.println("YES");
+		
+		else if(cSquare==aSquare+bSquare && c>a && c>b)
+		System.out.println("YES");
+		
+		else
+		System.out.println("NO");
+
+	}
+}
