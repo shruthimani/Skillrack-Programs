@@ -1,0 +1,69 @@
+
+
+Given a string S and an integer N as the input, the program must split the string into groups whose size is N and print them as the output in separate lines in a zig zag manner. If the last group size is less than N then the remaining letters must be filled with asterisk as shown in the Example Input/Output.
+Input Format:
+The first line contains S.
+The second line contains N.
+Output Format:
+LENGTH(S)/N + LENGTH(S)%N lines containing the desired pattern.
+Boundary Conditions:
+4 <= LENGTH(S) <= 500
+2 <= N <= LENGTH(S)
+Example Input/Output 1:
+Input:
+ENVIRONMENT
+3
+Output:
+ENV
+ORI
+NME
+*TN
+Example Input/Output 2:
+Input:
+ENVIRONMENT
+4
+Output:
+ENVI
+MNOR
+ENT*
+Example Input/Output 3:
+Input:
+EVERYDAY
+2
+Output:
+EV
+RE
+YD
+YA
+ 
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		String str=s.next();
+		int n=s.nextInt();
+		StringBuilder strbuild=new StringBuilder(str);
+		
+		while(strbuild.length()%n != 0)
+		{
+		    strbuild.append("*");
+		}
+		
+		StringBuilder sb=new StringBuilder();
+		int count=1;
+		for(int i=0;i<strbuild.length()-n+ 1;i=i+n)
+		{
+		   sb.append(strbuild.substring(i,i+n));
+		    
+		   if(count%2==0)
+		   sb.reverse();
+		   
+		   System.out.println(sb);
+		   sb.delete(0,sb.length());
+		   count++;
+		}
+	
+
+	}
+}
