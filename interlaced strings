@@ -1,0 +1,28 @@
+import java.util.*;
+public class Hello {
+ 
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        String S=s.next(),S1="",S2="";
+        int N=s.nextInt(),k=0,l=0,i,l2=S.length()-N;
+        for(i=0;i<S.length();i++)
+        {
+            if(i%2==0&&l<N)
+            {
+                S1+=S.charAt(i);
+                l++;
+            }
+            else if(k<l2)
+            {
+               S2+=S.charAt(i);
+                k++;
+            }
+            else{
+                S1+=S.charAt(i);
+                l++;
+            }
+        }
+        System.out.println(S1);
+        System.out.println(S2);
+        }
+}
