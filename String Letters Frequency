@@ -1,0 +1,72 @@
+
+A string value S containing N unique letters is passed as the input. The program must print the letters in the string based on the count of their occurrence. The letters of higher frequency of occurrence must appear first. If two letters have same frequency of occurrence then they are arranged as per alphabetical order.
+Input Format:
+The first line contains S.
+Output Format:
+N lines containing letters based on their frequency of occurrence.
+Boundary Conditions:
+2 <= LENGTH(S) <= 10000
+Example Input/Output 1:
+Input:
+MANAGEMENT
+Output:
+A2
+E2
+M2
+N2
+G1
+T1
+Example Input/Output 2:
+Input:
+ArrangemENt
+Output:
+r2
+A1
+E1
+N1
+a1
+e1
+g1
+m1
+n1
+t1
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		
+		String str=s.next();
+		ArrayList<Character> arr=new ArrayList<>();
+		for(int i=0;i<str.length();i++)
+		arr.add(str.charAt(i));
+		
+		Collections.sort(arr);
+		ArrayList<Integer> count=new ArrayList<>();
+		for(int i=0;i<str.length();i++)
+		    count.add(Collections.frequency(arr,arr.get(i)));
+		    
+		Set<Character> set=new LinkedHashSet<>();
+		int max=0,pos=0,j=0;
+		for(int i=0;i<count.size();i++)
+		{
+		    for(j=0;j<count.size();j++){
+		     if(max<count.get(j))
+		     {
+		        max=count.get(j);
+		        pos=j;
+		     }
+		    }
+		    set.add(arr.get(pos));
+		    max=0;
+		    count.set(pos,-1);
+		}
+
+
+for(Character num:set)
+{
+    System.out.print(num+""+Collections.frequency(arr,num));
+    System.out.println();
+}
+	}
+}
