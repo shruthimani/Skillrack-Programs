@@ -1,0 +1,40 @@
+
+
+A string S is passed as the input. S has at least one repeating character. The program must print the first repeating character C from the last.
+Input Format:
+The first line contains S.
+Output Format:
+The first line contains C.
+Boundary Conditions:
+Length of S will be from 3 to 100.
+Example Input/Output 1:
+Input:
+abcdexyzbwqpooplj
+Output:
+p
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		String str=s.nextLine();
+		String[] words=str.split("\\s");
+		
+		StringBuilder sb=new StringBuilder();
+		for(int i=0;i<words.length;i++)
+		sb.append(words[i]);
+		
+		String str1=sb.toString();
+		ArrayList<Character> arr=new ArrayList<>();
+		for(int i=0;i<str1.length();i++)
+		arr.add(str1.charAt(i));
+		
+	     int i=0;
+		for(i=arr.size()-1;i>=0;i--)
+		{
+		    if(Collections.frequency(arr,arr.get(i))>1)
+             break; 
+		}
+System.out.println(arr.get(i));
+	}
+}
