@@ -1,0 +1,45 @@
+
+
+The program must accept a set of N integer values as command line arguments and print the second largest value. If there is no second largest value, print -1 as the output.
+Example Input/Output 1:
+Input:
+20 30 30 20 30 15 12 11 10 6
+Output:
+20
+Example Input/Output 2:
+Input:
+19 19 19 19 19 19
+Output:
+-1
+#include<stdio.h>
+
+int main(int argc, char *argv[])
+{
+    int i=0,temp=0,k=0,j=0,num=-1;
+    int arr[argc];
+    for(i=0;i<argc;i++)
+    {
+        arr[k] = atoi(argv[i]);
+        k++;
+    }
+    for(i=1;i<argc-1;i++){
+      for(j=i+i;j<argc;j++)
+      {
+         if(arr[i]<arr[j])
+         {
+             temp=arr[i];
+             arr[i]=arr[j];
+             arr[j]=temp;
+         }
+      }
+    }
+    
+    for(i=2;i<argc;i++){
+        if(arr[i]<arr[1]){
+        num=arr[i];
+        break;
+        }
+    }
+    printf("%d ",num);
+    return 0;
+}
