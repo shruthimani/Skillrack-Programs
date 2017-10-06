@@ -1,0 +1,40 @@
+
+
+Given a positive integer N as the input, the program must print yes if N is a perfect number. Else no must be printed.
+Input Format:
+The first line contains N.
+Output Format:
+The first line contains yes or no
+Boundary Conditions:
+1 <= N <= 999999
+Example Input/Output 1:
+Input:
+6
+Output:
+yes
+Example Input/Output 2:
+Input:
+8
+Output:
+no
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		int total=0;
+		
+		for(int i=1;i<n;i++)
+		{
+		    if(n%i==0)
+		    total+=i;
+		}
+		if(total==n)
+		System.out.println("yes");
+		
+		else
+		System.out.println("no");
+
+	}
+}
