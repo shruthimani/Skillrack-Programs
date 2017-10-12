@@ -1,0 +1,55 @@
+Given a string S, the program must print the count of sub palindromes (with a minimum length of two characters) in the string S.
+Boundary Conditions:
+Length of the string is between 2 and 200.
+Input Format:
+First line will contain the string value S.
+Output Format:
+First line will contain the integer which represents the count of sub palindromes in the string S.
+Sample Input/Output:
+example 1:
+Input:
+everest
+Output:
+2
+Explanation:
+The sub palindromes are eve, ere
+Example 2:
+Input:
+abccbaab
+Output:
+5
+Explanation:
+The sub palindromes are cc, bccb, aa, baab, abccba
+
+
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+       Scanner s=new Scanner(System.in);
+       String str=s.next();
+       StringBuilder sb=new StringBuilder();
+       StringBuilder sb1=new StringBuilder();
+       int count=0;
+       for(int i=0;i<str.length();i++)
+       {
+           sb.append(str.charAt(i));
+           for(int j=i+1;j<str.length();j++)
+           {
+                sb.append(str.charAt(j));
+                sb1.append(sb.toString());
+
+               if(sb.toString().equals(sb1.reverse().toString()))
+               {
+                   count++;
+                   break;
+               }
+               sb1.delete(0,sb1.length());
+               
+           }
+
+           sb1.delete(0,sb1.length());
+           sb.delete(0,sb.length());
+       }
+       System.out.println(count);
+    }
+}
