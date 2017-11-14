@@ -1,0 +1,101 @@
+
+
+A square matrix of size N*N is passed as input. The program must print the largest sum possible S across a row or a column.
+
+
+Input Format:
+The first line will contain the value of N.
+N lines will follow with each line containing N integer values separated by a space.
+
+
+Boundary Conditions:
+1 <= N <= 20
+
+
+Output Format:
+The largest possible sum across a given row or a column in the N*N square matrix.
+
+
+Example Input/Output 1:
+
+Input:
+3
+1 2 3
+4 5 6
+3 3 9
+
+Output:
+18
+
+Explanation:
+18 is the largest possible sum along the 3rd column (as 3+6+9 = 18)
+
+
+Example Input/Output 2:
+Input:
+4
+4 5 6 1
+5 5 1 2
+9 2 2 2
+7 5 1 5
+
+
+Output:
+25
+
+Explanation:
+25 is the largest possible sum along the 1st column (as 4+5+9+7 = 25)
+
+ 
+
+Example Input/Output 3:
+Input:
+5
+9 1 2 3 6
+8 5 6 9 8
+1 2 4 9 2
+3 4 1 1 5
+2 3 2 2 1
+
+
+Output:
+36
+
+Explanation:
+36 is the largest possible sum along the 2nd row (as 8+5+6+9+8 = 36)
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		
+		int[][] arr=new int[n][n];
+		int sum=0;
+		for(int i=0;i<n;i++)
+		{
+		    int total=0;
+		    for(int j=0;j<n;j++)
+		    {
+		        arr[i][j]=s.nextInt();
+		        total+=arr[i][j];
+		    }
+		    if(total>sum)
+		    sum=total;
+		}
+		
+		for(int i=0;i<n;i++)
+		{
+		    int total=0;
+		    for(int j=0;j<n;j++)
+		    {
+		        total+=arr[j][i];
+		    }
+		    if(total>sum)
+		    sum=total;
+		}
+		System.out.println(sum);
+
+	}
+}
