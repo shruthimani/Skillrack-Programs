@@ -1,0 +1,63 @@
+
+
+A number N is the product of three consecutive prime numbers. N is passed as input to the program. The program must print the three consecutive prime numbers in ascending order. The prime numbers must be separated by a single space.
+
+
+Input Format:
+The first line will contain the value of N.
+
+
+Boundary Conditions:
+30 <= N <= 99999999
+
+
+Output Format:
+The three consecutive prime numbers when multiplied gives N (separated by a single space)
+
+
+Example Input/Output 1:
+
+Input:
+30
+
+Output:
+2 3 5
+
+Explanation:
+30 = 2*3*5. Hence 2 3 5 is printed as output.
+
+
+Example Input/Output 2:
+Input:
+409457
+
+Output:
+71 73 79
+
+Explanation:
+409457 = 71*73*79. Hence 71 73 79 is printed as output.
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		int total=1;
+		ArrayList<Integer> arr=new ArrayList<>();
+		
+		for(int i=2;i<n;i++)
+		{
+		    if(n%i == 0)
+		    {
+		        total*=i;
+		        arr.add(i);
+		    }
+		    if(total==n)
+		    break;
+		}
+		for(int num:arr)
+		    System.out.println(num+" ");
+
+	}
+}
