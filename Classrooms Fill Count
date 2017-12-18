@@ -1,0 +1,40 @@
+
+There are 10 classrooms in a school numbered from 0 to 9. N students are to be split and seated among these 10 rooms. When each of these N students arrive, they are asked to pick a number and the student is allocated to the room number which is same as the unit digit of the number picked by the student. The program must print the count of the students allocated to rooms with number 0 to 9.
+
+Input Format:
+The first line contains N.
+The second line contains the numbers picked by the N students separated by a space.
+
+Output Format:
+The first line contains the number of students allocated to rooms with number 0 to 9 separated by a space.
+
+Boundary Conditions:
+1 <= N <= 99999
+
+Example Input/Output 1:
+Input:
+15
+21 25 33 9 7 45 10 39 5 2 37 30 19 20 15
+
+Output:
+3 1 1 1 0 4 0 2 0 3
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		int[] arr={0,0,0,0,0,0,0,0,0,0};
+		
+		for(int i=0;i<n;i++)
+		{
+		    String val=s.next();
+		    int num=Character.getNumericValue(val.charAt(val.length()-1));
+		    arr[num]=arr[num]+1;
+		}
+		for(int i:arr)
+		System.out.print(i+" ");
+
+	}
+}
