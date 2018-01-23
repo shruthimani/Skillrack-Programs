@@ -1,0 +1,55 @@
+
+
+Given an integer N as the input, print the pattern as given in the Example Input/Output section.
+
+Input Format:
+The first line contains N.
+
+Output Format:
+2N-1 lines containing the desired pattern.
+
+Boundary Conditions:
+2 <= N <= 100
+
+Example Input/Output 1:
+Input:
+5
+
+Output:
+55555
+4444
+333
+22
+1
+22
+333
+4444
+55555
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		int k=n;
+		int l=2;
+		
+		for(int i=0;i<(2*n)-1;i++)
+		{
+		    if(k!=0)
+		    {
+		      for(int j=0;j<k;j++)
+		        System.out.print(k);
+		      k--;
+		    }
+		    else{
+		        for(int j=0;j<l;j++)
+		        System.out.print(l);
+		      l++;  
+		    }
+		    System.out.println();
+		}
+
+	}
+}
