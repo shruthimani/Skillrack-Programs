@@ -1,0 +1,95 @@
+
+A set of numbers of size N which are separated by one or more spaces will be passed as input. The program should print the prime numbers first followed by odd numbers and finally even numbers.
+Each of these categories, prime numbers, odd numbers and even numbers must be sorted in ascending order among themselves. The numbers which are prime must be excluded from the list of odd and even numbers (In the case of even numbers only 2 is prime as well as even)
+
+Input Format:
+First line will contain the set of numbers separated by one or more spaces.
+
+Output Format:
+First line will contain the prime numbers, odd numbers, even numbers in the same order sorted in ascending order. The numbers must be separated exactly by one space.
+
+Constraints:
+Size of the set N will be from 2 to 20.
+
+Example Input/Output 1:
+Input:
+4 5 9 22 11 2 15
+
+Output:
+2 5 11 9 15 4 22
+
+
+Example Input/Output 2:
+Input:
+611953 494147 493137 493133 493138
+
+Output:
+493133 494147 611953 493137 493138
+
+Explanation:
+493133 494147 611953 are prime numbers.
+
+
+
+import java.util.*;
+
+public class Hello {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] strnumbers = sc.nextLine().trim().split("[ ]");
+        List<Integer> numbers = new ArrayList<>();
+        for(String strnum:strnumbers){
+            numbers.add(Integer.parseInt(strnum));
+        }
+        Collections.sort(numbers);
+        
+        List<Integer> primes = new ArrayList<>();
+        List<Integer> odds = new ArrayList<>();
+        List<Integer> evens = new ArrayList<>();
+        for(int num:numbers){
+            if(isPrime(num) ==1){
+                primes.add(num);
+            }else if(num%2 == 1){
+                odds.add(num);
+            }else
+            {
+                evens.add(num);
+            }
+              
+        }
+        
+        printList(primes);
+        printList(odds);
+        printList(evens);
+        
+    }
+    
+    static void printList(List<Integer> numbers){
+        for(int num:numbers)
+            System.out.print(num+" ");
+    }
+
+    static int isPrime(int num) {
+        if (num < 2) {
+            return 0;
+        }
+
+        if (num == 2) {
+            return 1;
+        }
+
+        int square_root = (int) Math.sqrt(num);
+        int counter = 2;
+        while (counter <= square_root) {
+            if (num % counter == 0) {
+                return 0;
+            }
+
+            counter++;
+        }
+
+        return 1;
+
+    }
+}
