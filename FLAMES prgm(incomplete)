@@ -1,0 +1,44 @@
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		String str1=s.next();
+		String str2=s.next();
+		
+		String str=str1+str2;
+		ArrayList<Character> arr=new ArrayList<>();
+    	Set<Character> newStr=new HashSet<>();
+		
+		for(int i=0;i<str.length();i++)
+           arr.add(str.charAt(i));
+           
+        for(int i=0;i<str.length();i++)
+        {
+            int val=Collections.frequency(arr,arr.get(i));
+            if(val%2==1)
+            newStr.add(arr.get(i));
+            
+        }
+        
+        int size=newStr.size();
+        StringBuilder res=new StringBuilder("FLAMES");
+        int k=0;
+         int rem=6-size;
+         res.deleteCharAt(size-1);
+        // System.out.println(res+" "+rem);
+       for(int i=0;i<4;i++)
+        {
+                //k=(k+size)%res.length();
+                int temp=res.length();
+                res.deleteCharAt(rem-1);
+                rem=temp-rem;
+               // res.deleteCharAt(rem-1);
+               System.out.println(res+" "+rem);
+              
+           
+       }
+        System.out.println(res);
+
+	}
+}
